@@ -1,5 +1,6 @@
 import unittest
 from selenium import webdriver
+from selenium.webdriver.common.by import By
 
 class NewVisitorTest(unittest.TestCase):
     def setUp(self):
@@ -15,9 +16,14 @@ class NewVisitorTest(unittest.TestCase):
 
         # She notices the page title and header mention to-do lists.
         self.assertIn("To-Do", self.browser.title)
+        header_text = self.browser.find_element(By.TAG_NAME, "h1").text
+        self.assertIn("To-Do list", header_text)
 
         # She is invited to enter a to-do item straight away.
-        self.fail("TODO: Finish the test")
+        input_box = self.browser.find_element(By.ID, "new_todo")
+        self.assertEqual(input_box.get_attribute("placeholder"), "Enter a to-do item")
+
+        # self.fail("TODO: Finish the test")
 # She types "Buy peacock feathers" into a text box (Edith's
 # hobby is fly-fishing lures).
 
