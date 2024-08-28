@@ -6,6 +6,10 @@ html_content = """
     <title>To-Do lists</title>
     <h1>To-Do list</h1>
     <input id="new_todo" placeholder="Enter a to-do item"></input>
+    <table id="todo_list">
+        <tr><td>1: Buy peacock feathers</td></tr>
+        <tr><td>2: Use peacock feathers to make a fly</td></tr>
+    </table>
 </html>
 """
 
